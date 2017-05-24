@@ -12,3 +12,4 @@ source venv/bin/activate
 (venv)$ pip install django==1.11.1  
 (venv)$ pip install djangorestframework  
 (venv)$ pip install django-cors-headers  
+(venv)src$ python manage.py startapp todo (for creating app)  
