@@ -16,5 +16,9 @@ class TodoItemViewSet(viewsets.ModelViewSet):
 
   def perform_create(self, serializer):
     instance = serializer.save()
-    instance.url = reverse('todoitme-detail', args=[instance.pk], request=self.request)
+    instance.url = reverse('todoitem-detail', args=[instance.pk], request=self.request)
     instance.save()
+
+  def delete(self, request):
+    TodoItem.objects.all().delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
