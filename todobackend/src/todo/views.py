@@ -1,3 +1,4 @@
+"""Views file"""
 # -*- coding: utf-8 -*-
 # from __future__ import unicode_literals
 # from django.shortcuts import render
@@ -11,14 +12,17 @@ from rest_framework.response import Response
 
 # Create your views here.
 class TodoItemViewSet(viewsets.ModelViewSet):
-  queryset = TodoItem.objects.all()
-  serializer_class = TodoItemSerializer
+    """TodoItem views"""
+    queryset = TodoItem.objects.all()
+    serializer_class = TodoItemSerializer
 
-  def perform_create(self, serializer):
-    instance = serializer.save()
-    instance.url = reverse('todoitem-detail', args=[instance.pk], request=self.request)
-    instance.save()
+    def perform_create(self, serializer):
+        """create todoitem"""
+        instance = serializer.save()
+        instance.url = reverse('todoitem-detail', args=[instance.pk], request=self.request)
+        instance.save()
 
-  def delete(self, request):
-    TodoItem.objects.all().delete()
-    return Response(status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request):
+        """delete ALL todoitems"""
+        TodoItem.objects.all().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
