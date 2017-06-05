@@ -20,5 +20,6 @@ Add to vscode settings: "python.linting.pylintArgs": ["--load-plugins", "pylint_
 to run pylint on all folder files: (in folder) find . -iname "*.py" |xargs pylint
 ---  
 (venv)/src$ python manage.py startapp todo (for creating app)  
-(venv)/src$ python manage.py migrate
-(venv)/src$ python manage.py runserver
+(venv)/src$ python manage.py migrate  
+(venv)/src$ python manage.py runserver  
+(venv)/src$ pip install mysql-python (if mysql_config not found: sudo apt install libmysqlclient-dev, if Python.h not found error: sudo apt install python-dev)  

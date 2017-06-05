@@ -90,7 +90,7 @@ class TestDeleteTodoItem(APITestCase):
     def test_item_was_deleted(self):
         """test items count"""
         self.assertEqual(TodoItem.objects.count(), 0)
-    
+
 class TestDeleteAllTodoItems(APITestCase):
     """Test delete all TodoItems"""
     def setUp(self):
