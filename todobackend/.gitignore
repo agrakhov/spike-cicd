@@ -1,0 +1,8 @@
+venv
+*.pyc
+*.sqlite3
+.vscode
+
+.coverage
+coverage.xml
+unittests.xml
