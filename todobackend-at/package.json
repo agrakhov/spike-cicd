@@ -1,0 +1,25 @@
+{
+  "name": "todobackend-at",
+  "version": "0.1.0",
+  "description": "todobacken acceptance tests",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Alexey Grakhov",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "chai": "^4.0.2",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.4.2",
+    "mocha-jenkins-reporter": "^0.3.8",
+    "superagent": "^3.5.2",
+    "superagent-promise": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
+}
