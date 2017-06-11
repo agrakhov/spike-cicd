@@ -7,7 +7,7 @@
     "start": "nodemon src/index.js --exec babel-node",
     "build": "babel src -d dist",
     "serve": "node dist/index.js",
-    "test": "mocha --compilers js:babel-register"
+    "test": "nyc --reporter=lcov --reporter=text mocha --compilers js:babel-register"
   },
   "author": "Alexey Grakhov",
   "license": "ISC",
@@ -21,9 +21,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "nyc": "^11.0.2"
   }
 }

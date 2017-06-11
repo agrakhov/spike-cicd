@@ -2,8 +2,8 @@ import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { get } from '../utils/requestHelper';
 
-var should = chai.should;
-var expect = chai.expect;
+// var should = chai.should;
+const expect = chai.expect;
 
 chai.use(chaiAsPromised);
 
@@ -16,6 +16,6 @@ describe('first test', () => {
     result = get(url);
   });
 
-  it('response = 200', () => expect(result).to.eventually.be.fulfilled);
-  it('statusCode = 200', () => expect(result.statusCode).to.eventually.equals(200));
+  it('response = OK', () => expect(result).to.eventually.be.fulfilled);
+  it('statusCode = 200', () => result.then(r => expect(r.statusCode).to.equal(200)));
 });

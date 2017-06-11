@@ -12,4 +12,4 @@ export const get = (url) => {
   return rp(options);
 };
 
-export const post = (url, data) => ('not defined yet');
+// export const post = (url, data) => ('not defined yet');

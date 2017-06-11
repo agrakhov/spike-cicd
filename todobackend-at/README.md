@@ -1,5 +1,5 @@
-# Todobackend
-Spike on cicd stuff
+# Todobackend-at
+Acceptance test project
 
 ### Env setup
 Eslint:  
@@ -8,3 +8,8 @@ Eslint:
 - (for eslint chai support): `npm install --global eslint-plugin-chai-friendly`
 
 Babel:
+- installed dev packages according to its docs, added .babelrc  
+
+Test coverage report (nyc):
+- `npm install --save-dev nyc babel-plugin-istanbul`
+- modified .babelrc env-test-plugins-istanbul  
