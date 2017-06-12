@@ -18,7 +18,15 @@ export const get = (url) => {
   return request(options);
 };
 
-export const post = (url, data) => ('not defined yet');
+export const post = (url, body) => {
+  const options = {
+    uri: url,
+    method: 'POST',
+    body,
+    json: true,
+  };
+  return request(options);
+};
 
 export const options = (url) => {
   const opt = {
