@@ -2,9 +2,8 @@ import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { get, options, post } from '../utils/requestHelper';
 
-// var should = chai.should;
+// chai.should();
 const expect = chai.expect;
-
 chai.use(chaiAsPromised);
 
 const url = process.env.URL || 'http://localhost:8000/todos';
@@ -45,14 +44,17 @@ describe('POST test', () => {
     result = post(url, { title: 'do the test' });
   });
 
-  // it('response = OK', () => expect(result).to.eventually.be.fulfilled);
   it('return 201 and link', () => result.then((r) => {
     expect(r.statusCode).to.equal(201);
     expect(r.headers.location).to.match(/^https?:\/\/.*\/todos\/[\d]+$/);
   }));
+
   it('should create item', () => {
     const item = result.then(r => get(r.headers.location));
-    // not working
-    expect(item.body.title).to.eventually.be.equal('do the test');
+    return item.then((r) => {
+      console.log(JSON.stringify(r));
+      expect(r.statusCode).to.equal(200);
+      expect(r.body.title).to.equal('do test');
+    });
   });
 });
